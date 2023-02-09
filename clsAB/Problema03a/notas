@@ -1,0 +1,14 @@
+Herencia: características y atributos que permanecen en otras clases provenientes de una clase que tiene mayor jerarquia  
+
+Sobrecarga (Overload) 
+In Java, as in other object-oriented languages, you can use the same method name with different parameter 
+lists for multiple methods in the same class. This technique is called method overloading.
+As long each method’s signature is unique, then the compiler can tell which method, among the overloaded, 
+is being referenced.
+
+system.out.println(char c) -> String
+system.out.println(int i) -> String 
+
+Sobreescritura (Overriding
+Among these declarations, inside the child, may be methods with the same name and signature as those of the parent. This is called overriding
+equals, toString
