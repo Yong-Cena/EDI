@@ -35,11 +35,17 @@ public class AplicaMain14 {
         int cant= 0;
 
         //Cuenta la cantidad de elementos de la pila.
-        // ????
+        while(!pila.isEmpty())
+        {
+            pilaAux.push(pila.pop());
+            cant++;
+        }
 
         //Devuelve la pila a su estado original.
-        // ????
-
+        while(!pilaAux.isEmpty())
+        {
+            pila.push(pilaAux.pop());
+        }
         return cant;        
     }
     
