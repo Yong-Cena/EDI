@@ -45,7 +45,24 @@ public class AplicaMain17 {
         if (pila == null) throw new
             RuntimeException("(quitaRepetidos) Referencia a pila: null.\n");
 
+        ArrayStack<T> paux= new ArrayStack();
+        T aux, elem;
         
+        while(!pila.isEmpty())
+        {
+            elem=pila.pop();
+            while(!pila.isEmpty()&& pila.peek().equals(elem))
+            {
+                pila.pop();
+            }
+            paux.push(elem);
+        }
+        
+        while(!paux.isEmpty())
+        {
+            aux= paux.pop();
+            pila.push(aux);
+        }
     }
     
 }

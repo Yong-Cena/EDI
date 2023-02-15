@@ -26,21 +26,28 @@ public class AplicaMain16 {
     }
     
     // Invertir el orden de los elementos de una Pila de una clase T.
-    public static <T> void inverPila ( ArrayStack<T> pila ) {
+    public static <T> void inverPila (ArrayStack<T> pila) {
         if (pila == null)
             throw new ADTsException("inverPila: pila  null.\n");
-        
+
         int i, ini, fin, tam;
         ini = 0;    tam = pila.size();
-        //Arreglo lineal
-        // ????
+        T arrAux [] = (T[])(new Object[tam]);  //Arreglo linea
         fin= tam-1;
-        
+
         //Pasando la pila al arreglo, queda inverso
-        // ????
+        i = ini;       
+
+        while( !pila.isEmpty() ) {
+            arrAux[i] = pila.pop();
+            i++;           
+        }
         
         //Regresando a pila el contenido del arreglo
-        // ????
-
-    }    
+        i = ini;       
+        while( i <= fin ) {
+            pila.push( arrAux[i] );
+            i++;           
+        }
+    }   
 }
