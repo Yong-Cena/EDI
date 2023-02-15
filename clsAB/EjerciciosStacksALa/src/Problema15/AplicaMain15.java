@@ -72,15 +72,14 @@ public class AplicaMain15 {
         // Si >=, pila2 sub pila1; si <, pila2 no sub de pila1
         if( pila1.size() >= pila2.size() ) {
             //Compara cada elemento de la pila2, con todos los de la pila1
-            // ????
-            while ( !pila2.isEmpty() ) {
+            estap2=true;
+            while ( !pila2.isEmpty() && estap2==true) {
                 elem2 = pila2.pop();
-                // ????
+                paux2.push(elem2);
 
                 //"Ve" si el elem2 esta en la pila1.
                 //Si "estap2" es false, ya no sigue mas.
-                // ????
-                elemEnPila(pila1, elem2);
+                estap2=elemEnPila(pila1, elem2);
             }
 
             // Regresa pila2 a su estado original.
@@ -90,7 +89,7 @@ public class AplicaMain15 {
             // Deja ambas pilas en estado original
         
         }
-        return false;
+        return estap2;
     }
     
     // Esta elem2 en pila1. El metodo es no destructivo, respecto a la pila1.
@@ -103,11 +102,10 @@ public class AplicaMain15 {
         ArrayStack<T> paux1= new ArrayStack<T>();
 
         //"Ve" si el elem2 esta en la pila1.
-        // ????
-        while ( !pila1.isEmpty() ) {
+        while ( !pila1.isEmpty() && estap1==false){
             elem1 = pila1.pop();
             paux1.push(elem1);  // Vaciando pila1
-            // ???? Compara por ==
+            estap1=elem2.equals(elem1);
         }
 
         // Regresa pila1 a su estado original.
@@ -115,7 +113,7 @@ public class AplicaMain15 {
             pila1.push(paux1.pop());  // Rellena pila1 completa
         } 
         
-        return false;
+        return estap1;
     }
     
 }
