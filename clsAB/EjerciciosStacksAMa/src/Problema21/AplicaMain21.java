@@ -22,17 +22,17 @@ public class AplicaMain21 {
         System.out.println("\n>>>> 21a.1) Pila original----");
         System.out.println("      arstr: " + arstr.toString()); 
         System.out.println("      size(arstr): " + arstr.size()); 
-        // System.out.println("      maxSize(arstr): " + arstr.maxSize()); 
+        System.out.println("      length(arstr): " + arstr.length()); 
         
         arstr.push("seis");  // Agregando un elemento
 
         System.out.println(">>>> 21a.2) Pila resultante----");
         System.out.println("      arstr: " + arstr.toString());    
         System.out.println("      size(arstr): " + arstr.size()); 
-        // System.out.println("      maxSize(arstr): " + arstr.maxSize()); 
+        System.out.println("      length(arstr): " + arstr.length()); 
         
        
-        // Primera prueba 21b
+        // Segunda prueba 21b
         System.out.println("\n>>>> 21b.1) Pila original----");
         System.out.println("      arstr: " + arstr.toString());        
         n = 3;
@@ -40,7 +40,7 @@ public class AplicaMain21 {
         System.out.println("    ¿Se pudo realizar: " + arstr.multiPop(n));
         System.out.println("---- 21b.3) Pila resultante----");
         System.out.println("      arstr: " + arstr.toString());    
-/*        
+        
         // Segunda prueba 21b
         System.out.println("\n>>>> 21b.4) Pila original----");
         System.out.println("      arstr: " + arstr.toString());        
@@ -59,8 +59,8 @@ public class AplicaMain21 {
         System.out.println("    ¿Se pudo realizar: " + arstr.multiPop(n));    
         
         System.out.println("---- 21b.9) Pila resultante----");
-        System.out.println("      arstr: " + arstr.toString());  
-*/
+        System.out.println("      arstr: " + arstr.toString()); 
+
     }
     
 }
