@@ -26,7 +26,11 @@ public class AplicaMain20 {
         // Conversion de entero a binario, por divisiones sucesivas entre 2,
         //    y poniendo los residuos en el stack
         int cociente, residuo;
-        // ????
+        cociente= ent/2;
+        while(cociente!=0)
+        {
+            
+        }
 
         // Construccion, mediante acumulacion, del numero binario
         int result= 0;
