@@ -40,7 +40,7 @@ public class AplicaMain21 {
         System.out.println("    ¿Se pudo realizar: " + arstr.multiPop(n));
         System.out.println("---- 21b.3) Pila resultante----");
         System.out.println("      arstr: " + arstr.toString());    
-/*        
+        
         // Segunda prueba 21b
         System.out.println("\n>>>> 21b.4) Pila original----");
         System.out.println("      arstr: " + arstr.toString());        
@@ -60,7 +60,7 @@ public class AplicaMain21 {
         
         System.out.println("---- 21b.9) Pila resultante----");
         System.out.println("      arstr: " + arstr.toString());  
-*/
+
     }
     
 }

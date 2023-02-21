@@ -5,7 +5,7 @@ import Stacks.*;
  * Problema 16
  * @author EDI
  */
-public class AplicaMain16 {
+public class InvertirPila {
 
     public static void main(String[] args) {
         ArrayStack<Double> pilaDou = new ArrayStack<Double>();
