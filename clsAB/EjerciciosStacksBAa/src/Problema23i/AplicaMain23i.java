@@ -99,31 +99,16 @@ public class AplicaMain23i {
                     // TODO
                     switch( clasestr ) {
                         case "Double":
-                            Double d1, d2, d12;
-                            d1= (Double) e1;    d2= (Double) e2;
-                            d12= d1 + d2;
-                            e12= (T) d12;
+                            // ????
                             break;
                         case "Boolean":
-                            Boolean b1, b2, b12;
-                            b1= (Boolean) e1; b2= (Boolean) e2;
-                            b12= b1||b2;
-                            e12= (T)b12;
+                            // ????
                             break;
                         case "String":
-                            String str1, str2, str12;
-                            str1= (String) e1;  str2= (String)e2;
-                            str12= str1+str2;
-                            e12= (T)str12;
+                            // ????
                             break;
                         case "Complejo":
-                            Complejo c1,c2,c12;
-                            c1= (Complejo)e1; c2= (Complejo)e2;
-                            Double ri1, ri2;
-                            ri1= c1.getParteReal()+c2.getParteReal();
-                            ri2= c1.getParteImaginaria()+c2.getParteImaginaria();
-                            c12= new Complejo(ri1,ri2);
-                            e12= (T)c12;
+                            // ????
                             break;
                         // No hay default.    
                     }
