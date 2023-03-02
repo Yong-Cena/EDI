@@ -40,26 +40,33 @@ public class Escuela {
         
         // para il: 'I' es ingenieria, 'L' es licenciatura
         boolean seAgrega= true;
-        if(alumsIng.contains(al) || alumsLic.contains(al))
-        {
-            seAgrega=false;
-        }
-        else
-        {
-            switch(il)
+        Iterator<Alumno> itc= alumsIng.iterator();
+        
+        switch(il)
             {
                 case 'I':
-                    alumsIng.add(al);
+                    if(alumsIng.contains(al))
+                    {
+                        seAgrega=false;
+                    }
+                    else
+                    {
+                        alumsIng.add(al);
+                    }
                     break;
                     
                 case 'L':
-                    alumsLic.add(al);
+                    if(alumsLic.contains(al))
+                    {
+                        seAgrega=false;
+                    }
+                    else
+                    {
+                        alumsLic.add(al);
+                    }
                     break;
-                
             }
-        }
 
-        
         return seAgrega;
     }
     
@@ -69,8 +76,30 @@ public class Escuela {
             ADTsException("Problema25.Escuela.agregaAlum(): al null.\n");
         
         boolean seQuita= true;
-        // TODO ????
-        
+        switch(il)
+            {
+                case 'I':
+                    if(alumsIng.contains(al))
+                    {
+                        alumsIng.remove(al);
+                    }
+                    else
+                    {
+                        seQuita=false;
+                    }
+                    break;
+                    
+                case 'L':
+                    if(alumsLic.contains(al))
+                    {
+                        alumsLic.remove(al);
+                    }
+                    else
+                    {
+                        seQuita=false;
+                    }
+                    break;
+            }
         return seQuita;
     }
     

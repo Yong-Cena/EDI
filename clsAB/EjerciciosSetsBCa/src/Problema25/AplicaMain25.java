@@ -29,7 +29,7 @@ public class AplicaMain25 {
         e1.agregaAlum(a4, 'L');
         System.out.println("\n1.0 - Agregando, e1.toString():" + e1.toString());
 
-/*        
+        
         // 2) QUITAR
         System.out.println("\n2.0 - Quitando, e1.quitaAlum(a3,'L'):" +
                 e1.quitaAlum(a3,'L') );
@@ -43,6 +43,7 @@ public class AplicaMain25 {
         e1.agregaAlum(a5, 'L');
         System.out.println("2.3 - Agregando, e1.toString():" + e1.toString());
         
+/*        
         // 3)
         ArraySet<Alumno> set3= e1.conjTdAlum();
         System.out.println("\n3.0 - Cadena de todos los alumnos: " +
@@ -50,7 +51,7 @@ public class AplicaMain25 {
         
         // 4)
         ArraySet<Alumno> set4= e1.conjTdAlumUnaIyL();
-        System.out.println("\n4.0 - Cadena de todos los alumnos" +
+        System.out.println("\n4.0 - Cadena de todos los alumnos" +                              
                 "que están cursando una ingeniería y una licenciatura: " +
                 "\n  " + set4.toString());
         
