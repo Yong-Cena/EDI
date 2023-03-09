@@ -40,9 +40,11 @@ public class Escuela {
         
         // para il: 'I' es ingenieria, 'L' es licenciatura
         boolean seAgrega= true;
-        Iterator<Alumno> itc= alumsIng.iterator();
-        
-        switch(il)
+        if(alumsIng.contains(al) && alumsLic.contains(al)){
+            seAgrega=false;
+        }
+        else{
+            /*switch(il)
             {
                 case 'I':
                     if(alumsIng.contains(al))
@@ -66,6 +68,17 @@ public class Escuela {
                     }
                     break;
             }
+*/
+        switch(il){
+            case 'I':
+                alumsIng.add(al);
+                break;
+            case 'L':
+                alumsLic.add(al);
+                break;
+                    
+        }
+        }
 
         return seAgrega;
     }
@@ -75,31 +88,21 @@ public class Escuela {
         if( al==null ) throw new 
             ADTsException("Problema25.Escuela.agregaAlum(): al null.\n");
         
-        boolean seQuita= true;
-        switch(il)
-            {
-                case 'I':
-                    if(alumsIng.contains(al))
-                    {
-                        alumsIng.remove(al);
-                    }
-                    else
-                    {
-                        seQuita=false;
-                    }
-                    break;
+        boolean seQuita= false;
+        switch(il){
+            case 'I':
+                if(alumsIng.contains(al)){
+                alumsIng.remove(al);
+                seQuita=true;}
+                break;
+            case 'L':
+                if(alumsLic.contains(al)){
+                alumsLic.remove(al);
+                seQuita=true;}
+                break;
                     
-                case 'L':
-                    if(alumsLic.contains(al))
-                    {
-                        alumsLic.remove(al);
-                    }
-                    else
-                    {
-                        seQuita=false;
-                    }
-                    break;
-            }
+        }
+        
         return seQuita;
     }
     
@@ -108,7 +111,9 @@ public class Escuela {
     public ArraySet<Alumno> conjTdAlum() {
         ArraySet<Alumno> nvoSet;
         // TODO ????
-        nvoSet = new ArraySet();  // vacio
+        nvoSet = new ArraySet(); 
+        nvoSet.addAll(alumsIng);
+        nvoSet.addAll(alumsLic);
         return nvoSet;
     }
     
@@ -116,8 +121,9 @@ public class Escuela {
     //    que están cursando una ingeniería y una licenciatura.
     public ArraySet<Alumno> conjTdAlumUnaIyL() {
         ArraySet<Alumno> nvoSet;
-        // TODO ????
-        nvoSet = new ArraySet();  // vacio
+        
+        nvoSet = new ArraySet();
+        nvoSet.addAll(alumsIng.intersection(alumsLic));
         return nvoSet;
     }
 
@@ -125,17 +131,28 @@ public class Escuela {
     //    que están cursando solamente una ingeniería o una licenciatura.
     public ArraySet<Alumno> conjTdAlumUnaIoL() {
         ArraySet<Alumno> nvoSet, auxSet;
-        // TODO ????
+        
         nvoSet = new ArraySet();  // vacio
+        nvoSet.addAll(conjTdAlumUnaIyL().difference(alumsIng));
+        nvoSet.addAll(conjTdAlumUnaIyL().difference(alumsLic));      
         return nvoSet;
     }
     
     // 6) Calcular y regresar el promedio de edad de todos los alumnos
     //    de Ingeniería
     public double promAlumsIng() {
-        int taing= 0;    // Contador  
+        int taing= 0; 
+        int contalum=0;// Contador  
         double prom= 0.0;
+        
         // TODO ????
+        ArrayIterator<Alumno> it= (ArrayIterator<Alumno>)alumsIng.iterator();
+        while(it.hasNext()){
+            Alumno al= it.next();
+            taing=taing+al.getEdad();
+            contalum++;
+        }
+        prom=taing/contalum;
         
         return prom;
     }
@@ -147,7 +164,12 @@ public class Escuela {
             throw new ADTsException("Problema25.Escuela.totAlumsLicEdad(): myed negativo.\n");
         
         int talicme= 0;    // Contador        
-        // TODO ????
+        ArrayIterator<Alumno> it= (ArrayIterator<Alumno>)alumsIng.iterator();
+        while(it.hasNext()){
+            Alumno al= it.next();
+            if(al.getEdad()>myed)
+                talicme++;
+        }
 
         return talicme;
     }
