@@ -35,6 +35,8 @@ public class AplicaMain34 {
     
         CArrayQueue<T> aux= new CArrayQueue(Cgc.length());
         T obj;
+        aux.enqueue(Cgc.dequeue());
+        
         while(!Cgc.isEmpty())
         {
             obj=Cgc.dequeue();

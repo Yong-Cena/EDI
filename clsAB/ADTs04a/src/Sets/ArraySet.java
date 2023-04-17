@@ -327,5 +327,10 @@ public class ArraySet<T> implements SetADT<T>, Iterable<T> {
     public int length() {
         return set.length;        
     }
+
+    @Override
+    public SetADT<T> intersectionRv(SetADT<T> set) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
 

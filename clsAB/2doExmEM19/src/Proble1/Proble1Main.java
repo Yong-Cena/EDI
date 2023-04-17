@@ -31,7 +31,13 @@ public class Proble1Main {
         
     }
     
-    public static <T> void cada2sCola(CircularArrayQueue<T> cola) {
+    public static <T> void cada2sCola(CircularArrayQueue<T> cola) 
+    {
+        if(cola==null) throw new
+            RuntimeException("Cola en null");
+        
+        
+                
 
     }
         
