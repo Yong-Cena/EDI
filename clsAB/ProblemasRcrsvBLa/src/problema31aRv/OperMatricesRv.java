@@ -69,11 +69,11 @@ public class OperMatricesRv {
         {
             if(f>0)
             {
-                suma=sumaRenMd(mat,f-1,c);
+                suma=sumaColMd(mat,f-1,c);
             }
             else
             {
-                suma= sumaRenMd(mat,mat.length-1, c-1);
+                suma= sumaColMd(mat,mat.length-1, c-1);
             }
             suma+= mat[f][c];
         }

@@ -36,7 +36,32 @@ public class Proble1Main {
         if(cola==null) throw new
             RuntimeException("Cola en null");
         
+        T e1,e2;
         
+        if(!cola.isEmpty())
+        {
+            e1= cola.first();
+            
+            if(e1 instanceof Double || e1 instanceof String)
+            {
+                int n= cola.size()/2;
+                
+                while(n >0)
+                {
+                    e1=cola.dequeue();
+                    e2= cola.dequeue();
+                    
+                    cola.enqueue(e2);
+                    cola.enqueue(e1);
+                    n--;
+                }
+                
+                if(cola.size()%2==1)
+                {
+                    cola.enqueue(cola.dequeue());
+                }
+            }
+        }
                 
 
     }
