@@ -15,15 +15,7 @@ public class LnkStrwN<T> {
         count = 0;
         front = null;
     }
-
-    public LnkStrwN() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public LnkStrwN() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+    
     /** Agrega el elemento especificado en la posicion pos.
      * Si pos<=1, agrega en la posición 1;
      * si pos>count, agrega en la posicion count+1. */
@@ -265,6 +257,8 @@ public class LnkStrwN<T> {
         tamotra= otralse.size();
         
         LNode currthis, currotra, sigthis,sigotra;
+        //auxiliar para el caso this<otro    1.this  2.otro
+        LNode ante=null;
         
         currthis= this.front;
         currotra= otralse.front;
@@ -275,6 +269,8 @@ public class LnkStrwN<T> {
         {
             sigthis= currthis.getNext();
             sigotra= currotra.getNext();
+            
+            ante=currotra;
             
             currthis.setNext(currotra);
             currotra.setNext(sigthis);
@@ -288,10 +284,32 @@ public class LnkStrwN<T> {
         
         if(tamthis<tamotra)
         {
-            //
+            ante.setNext(currotra);
             this.count= this.count + (tamotra-tamthis);
             otralse.count= otralse.count - (tamotra-tamthis);
         }
+        
+        /*Segunda solucion
+        while(currthis != null && currotra != null)
+        {
+            sigthis= currthis.getNext();
+            sigotra= currotra.getNext();
+            
+            currthis.setNext(currotra);
+            currotra.setNext(sigthis);
+        
+            surrthis= sigthis;
+            currotra= sigotra;
+            this.count++;
+            otralse.count++;
+        ]
+        
+        if(currthis == null && currotra != null)
+        {
+            //El ultimo en ser agregado y este mismo apunta a null: debe apuntar a currotra.getNext(original)
+            this.addLast((T) currotra);
+        ]
+        */
         
         otralse.front= null;
     }
