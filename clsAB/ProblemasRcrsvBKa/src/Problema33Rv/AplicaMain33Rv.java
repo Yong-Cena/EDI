@@ -39,8 +39,7 @@ public class AplicaMain33Rv {
             elem= Cgc.dequeue();
             invierteQg(Cgc);
             Cgc.enqueue(elem);
-        }
-        
+        } 
     }
     
 }
