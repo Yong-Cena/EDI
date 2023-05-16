@@ -40,6 +40,8 @@ public class AplicaMain34 {
         while(!Cgc.isEmpty())
         {
             obj=Cgc.dequeue();
+            System.out.println("last: "+aux.last());
+            System.out.println("first: "+aux.first());
             if(!obj.equals(aux.last()))
             {
                 aux.enqueue(obj);
